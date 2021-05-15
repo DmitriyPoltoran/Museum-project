@@ -56,5 +56,19 @@ function getTimetable(req, res) {
     "price": faker.random.number({'min': 1, 'max' : 40}) + "$",
     "name": faker.company.companyName(),
     "date": faker.date.future(),
+  },
+  {
+
+    "img": "" + faker.image.image(),
+    "price": faker.random.number({'min': 1, 'max' : 40}) + "$",
+    "name": faker.company.companyName(),
+    "date": faker.date.future(),
+  },
+  {
+
+    "img": "" + faker.image.image(),
+    "price": faker.random.number({'min': 1, 'max' : 40}) + "$",
+    "name": faker.company.companyName(),
+    "date": faker.date.future(),
   }]);
 }

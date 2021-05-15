@@ -45,6 +45,43 @@
       },
       "x-swagger-router-controller" : "timetable-controller"
     },
+    "/souvenirs" : {
+      "get" : {
+        "description" : "Returns list of city events",
+        "operationId" : "souvenirs",
+        "parameters" : [ {
+          "name" : "date",
+          "in" : "query",
+          "description" : "Filtering date",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SouvenirsResponse"
+                }
+              }
+            }
+          },
+          "default" : {
+            "description" : "Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-swagger-router-controller" : "souvenirs-controller"
+    },
     "/swagger" : {
       "x-swagger-pipe" : "swagger_raw"
     }
@@ -55,6 +92,12 @@
         "type" : "array",
         "items" : {
           "$ref" : "#/components/schemas/Timetable"
+        }
+      },
+      "SouvenirsResponse" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/Souvenirs"
         }
       },
       "Timetable" : {
@@ -71,6 +114,21 @@
             "type" : "string"
           },
           "date" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Souvenirs" : {
+        "required" : [ "img" ],
+        "type" : "object",
+        "properties" : {
+          "img" : {
+            "type" : "string"
+          },
+          "price" : {
+            "type" : "string"
+          },
+          "name" : {
             "type" : "string"
           }
         }

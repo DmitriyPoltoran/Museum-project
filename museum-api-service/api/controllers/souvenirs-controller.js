@@ -55,5 +55,18 @@ function getSouvenirs(req, res) {
     "img": "" + faker.image.image(),
     "price": faker.random.number({'min': 20, 'max' : 50}) + "$",
     "name": faker.company.companyName(),
+  },
+  {
+
+    "img": "" + faker.image.image(),
+    "price": faker.random.number({'min': 20, 'max' : 50}) + "$",
+    "name": faker.company.companyName(),
+  },
+,
+{
+
+    "img": "" + faker.image.image(),
+    "price": faker.random.number({'min': 20, 'max' : 50}) + "$",
+    "name": faker.company.companyName(),
   }]);
 }

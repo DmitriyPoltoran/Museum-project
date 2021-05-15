@@ -18,10 +18,17 @@ import {
     ErrorResponse,
     ErrorResponseFromJSON,
     ErrorResponseToJSON,
+    Souvenirs,
+    SouvenirsFromJSON,
+    SouvenirsToJSON,
     Timetable,
     TimetableFromJSON,
     TimetableToJSON,
 } from '../models';
+
+export interface SouvenirsRequest {
+    date?: string;
+}
 
 export interface TimetableRequest {
     date?: string;
@@ -31,6 +38,36 @@ export interface TimetableRequest {
  * 
  */
 export class DefaultApi extends runtime.BaseAPI {
+
+    /**
+     * Returns list of city events
+     */
+    async souvenirsRaw(requestParameters: SouvenirsRequest): Promise<runtime.ApiResponse<Array<Souvenirs>>> {
+        const queryParameters: any = {};
+
+        if (requestParameters.date !== undefined) {
+            queryParameters['date'] = requestParameters.date;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/souvenirs`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(SouvenirsFromJSON));
+    }
+
+    /**
+     * Returns list of city events
+     */
+    async souvenirs(requestParameters: SouvenirsRequest): Promise<Array<Souvenirs>> {
+        const response = await this.souvenirsRaw(requestParameters);
+        return await response.value();
+    }
 
     /**
      * Returns list of city events
