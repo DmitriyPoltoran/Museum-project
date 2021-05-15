@@ -33,4 +33,11 @@ SwaggerExpress.create(config, function (err, swaggerExpress) {
       `/api/v1/timetable?date=${fullDateText}`
     );
   }
+  if (swaggerExpress.runner.swagger.paths["/souvenirs"]) {
+    console.log(
+      "try this:\ncurl http://127.0.0.1:" +
+      port +
+      `/api/v1/souvenirs?date=${fullDateText}`
+    );
+  }
 });
