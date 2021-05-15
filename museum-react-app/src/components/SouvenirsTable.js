@@ -13,7 +13,7 @@ class SouvenirsTable extends React.Component {
   }
   render() {
     return <div>
-      <button className="btn" onClick={this.handleReload}>Reload</button>
+      
       <div>
       <h1>Image of exibition</h1>
         <div class="items">
@@ -27,6 +27,7 @@ class SouvenirsTable extends React.Component {
         <div class="items">
         {this.state.timetable.map((event) => <p>  {event.date}</p>)}
         </div>
+        <button className="btn" onClick={this.handleReload}>Reload</button>
     </div>
     </div>
   }
