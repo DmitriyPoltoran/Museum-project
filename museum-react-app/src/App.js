@@ -2,6 +2,7 @@ import "./App.css";
 import React from "react";
 import TimeTable from "./components/TimeTable.js";
 import SouvenirsTable from "./components/SouvenirsTable.js";
+import PhotoTable from "./components/PhotoTable.js";
 
 import {
   BrowserRouter as Router,
@@ -28,12 +29,15 @@ function App() {
             </li>
 
             <li>
-              <Link to="/souvenirs">Map</Link>
+              <Link to="/souvenirs">Souvenirs</Link>
             </li>
 
             <li>
               <Link to="/timetable">TimeTable</Link>
             </li>
+
+
+
 
             <li>
               <Link to="/photo">Photo</Link>
@@ -48,13 +52,18 @@ function App() {
             <Switch>
 
              
-              <Route path="/timetable">
+            <Route path="/timetable">
                 <h1>TimeTable</h1>
                 <TimeTable />
               </Route>
 
+              
               <Route path="/souvenirs">
                 <SouvenirsTable />
+              </Route>
+
+              <Route path="/photo">
+                <PhotoTable />
               </Route>
 
              
