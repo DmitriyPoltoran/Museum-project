@@ -41,6 +41,30 @@ paths:
           description: Error
           schema:
             $ref: "#/definitions/ErrorResponse"
+  /souvenirs:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: souvenirs-controller
+    get: 
+      description: Returns list of city events
+      # used as the method name of the controller
+      operationId: souvenirs
+      parameters:
+        - name: date
+          in: query
+          description: Filtering date
+          required: false
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/SouvenirsResponse"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"          
     
   /swagger:
     x-swagger-pipe: swagger_raw
@@ -51,7 +75,11 @@ definitions:
       type: array
       items:
         $ref: "#/definitions/Timetable"
-  
+  SouvenirsResponse:
+      type: array
+      items:
+        $ref: "#/definitions/Souvenirs"
+        
   Timetable:
     required:
       - img
@@ -65,6 +93,16 @@ definitions:
       date:
         type: string
 
+  Souvenirs:
+    required:
+      - img
+    properties:
+      img:
+        type: string
+      price:
+        type: string       
+      name:
+        type: string
       
       
       

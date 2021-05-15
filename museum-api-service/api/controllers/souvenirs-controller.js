@@ -27,7 +27,7 @@ const jsf = require('json-schema-faker');
   we specify that in the exports of this module that 'hello' maps to the function named 'hello'
  */
 module.exports = {
-  timetable: getTimetable
+    souvenirs: getSouvenirs
 };
 
 /*
@@ -36,7 +36,7 @@ module.exports = {
   Param 1: a handle to the request object
   Param 2: a handle to the response object
  */
-function getTimetable(req, res) {
+function getSouvenirs(req, res) {
   // variables defined in the Swagger document can be referenced using req.swagger.params.{parameter_name}
   const dateRightNow = new Date();
   let fullDateText = `${dateRightNow.getFullYear()}-${dateRightNow.getMonth() + 1 >= 10
@@ -53,22 +53,20 @@ function getTimetable(req, res) {
   res.json([{
 
     "img": "" + faker.image.image(),
-    "price": faker.random.number({'min': 1, 'max' : 40}) + "$",
+    "price": faker.random.number({'min': 20, 'max' : 50}) + "$",
     "name": faker.company.companyName(),
-    "date": faker.date.future(),
   },
   {
 
     "img": "" + faker.image.image(),
-    "price": faker.random.number({'min': 1, 'max' : 40}) + "$",
+    "price": faker.random.number({'min': 20, 'max' : 50}) + "$",
     "name": faker.company.companyName(),
-    "date": faker.date.future(),
   },
-  {
+,
+{
 
     "img": "" + faker.image.image(),
-    "price": faker.random.number({'min': 1, 'max' : 40}) + "$",
+    "price": faker.random.number({'min': 20, 'max' : 50}) + "$",
     "name": faker.company.companyName(),
-    "date": faker.date.future(),
   }]);
 }

@@ -1,6 +1,7 @@
 import "./App.css";
 import React from "react";
 import TimeTable from "./components/TimeTable.js";
+import SouvenirsTable from "./components/SouvenirsTable.js";
 
 import {
   BrowserRouter as Router,
@@ -26,7 +27,7 @@ function App() {
             </li>
 
             <li>
-              <Link to="/map">Map</Link>
+              <Link to="/souvenirs">Map</Link>
             </li>
 
             <li>
@@ -42,13 +43,14 @@ function App() {
           <section>
             <Switch>
 
-              <Route path="/map">
-                <Map />
-              </Route>
-
+             
               <Route path="/timetable">
                 <h1>TimeTable</h1>
                 <TimeTable />
+              </Route>
+
+              <Route path="/souvenirs">
+                <SouvenirsTable />
               </Route>
 
              
