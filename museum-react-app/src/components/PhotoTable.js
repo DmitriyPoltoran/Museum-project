@@ -22,6 +22,7 @@ class PhotoTable extends React.Component {
   render() {
   return <div>
     <div class="container">
+      <h1>Photos of Exhibition</h1>
       <div class="AppPhoto">
       {this.state.photo.map((event) => <p> <img src={event.img1} alt="" /></p>)} 
       {this.state.photo.map((event) => <p>{event.date}</p>)}

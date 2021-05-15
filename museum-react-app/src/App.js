@@ -28,14 +28,14 @@ function App() {
             </li>
 
             <li>
-              <Link to="/souvenirs">Map</Link>
+              <Link to="/souvenirs">Souvenirs</Link>
             </li>
 
             <li>
-              <Link to="/timetable">Weather on weak</Link>
+              <Link to="/timetable">TimeTable</Link>
             </li>
             <li>
-              <Link to="/photo">Weather on weak</Link>
+              <Link to="/photo">Photo</Link>
             </li>
 
            
@@ -48,11 +48,12 @@ function App() {
             <Switch>
 
              
-              <Route path="/timetable">
+            <Route path="/timetable">
                 <h1>TimeTable</h1>
                 <TimeTable />
               </Route>
 
+              
               <Route path="/souvenirs">
                 <SouvenirsTable />
               </Route>
