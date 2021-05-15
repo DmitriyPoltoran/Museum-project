@@ -27,7 +27,7 @@ const jsf = require('json-schema-faker');
   we specify that in the exports of this module that 'hello' maps to the function named 'hello'
  */
 module.exports = {
-    souvenirs: getSouvenirs
+  photo: getPhoto
 };
 
 /*
@@ -36,7 +36,7 @@ module.exports = {
   Param 1: a handle to the request object
   Param 2: a handle to the response object
  */
-function getSouvenirs(req, res) {
+function getPhoto(req, res) {
   // variables defined in the Swagger document can be referenced using req.swagger.params.{parameter_name}
   const dateRightNow = new Date();
   let fullDateText = `${dateRightNow.getFullYear()}-${dateRightNow.getMonth() + 1 >= 10
@@ -51,22 +51,16 @@ function getSouvenirs(req, res) {
 
   // this sends back a JSON response which is a single string
   res.json([{
-
-    "img": "" + faker.image.image(),
+    "img1": faker.image.image(),
+    "img2": faker.image.image(),
+    "img3": faker.image.image(),
+    "img4": faker.image.image(),
+    "img5": faker.image.image(),
     "date": faker.date.future(),
-    "name": faker.company.companyName(),
-  },
-  {
-
-    "img": "" + faker.image.image(),
-    "date": faker.date.future(),
-    "name": faker.company.companyName(),
-  },
-,
-{
-
-    "img": "" + faker.image.image(),
-    "date": faker.date.future(),
-    "name": faker.company.companyName(),
+    "name1":""+ faker.company.companyName(),
+    "name2": ""+ faker.company.companyName(),
+    "name3":""+ faker.company.companyName(),
+    "name4": ""+ faker.company.companyName(),
+    "name5":""+ faker.company.companyName(),
   }]);
 }

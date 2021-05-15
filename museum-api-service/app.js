@@ -40,4 +40,11 @@ SwaggerExpress.create(config, function (err, swaggerExpress) {
       `/api/v1/souvenirs?date=${fullDateText}`
     );
   }
+  if (swaggerExpress.runner.swagger.paths["/photo"]) {
+    console.log(
+      "try this:\ncurl http://127.0.0.1:" +
+      port +
+      `/api/v1/photo?date=${fullDateText}`
+    );
+  }
 });

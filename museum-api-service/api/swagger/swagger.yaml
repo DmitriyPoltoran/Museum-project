@@ -64,6 +64,30 @@ paths:
         default:
           description: Error
           schema:
+            $ref: "#/definitions/ErrorResponse"
+  /photo:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: photo-controller
+    get: 
+      description: Returns list of city events
+      # used as the method name of the controller
+      operationId: photo
+      parameters:
+        - name: date
+          in: query
+          description: Filtering date
+          required: false
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/PhotoResponse"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
             $ref: "#/definitions/ErrorResponse"          
     
   /swagger:
@@ -79,6 +103,10 @@ definitions:
       type: array
       items:
         $ref: "#/definitions/Souvenirs"
+  PhotoResponse:
+      type: array
+      items:
+        $ref: "#/definitions/Photo"
         
   Timetable:
     required:
@@ -102,6 +130,34 @@ definitions:
       price:
         type: string       
       name:
+        type: string
+      date:
+        type: string
+  Photo:
+    required:
+      - img1
+    properties:
+      img1:
+        type: string
+      img2:
+        type: string
+      img3:
+        type: string
+      img4:
+        type: string
+      img5:
+        type: string
+      name1:
+        type: string 
+      name2:
+        type: string
+      name3:
+        type: string
+      name4:
+        type: string
+      name5:
+        type: string  
+      date:
         type: string
       
       

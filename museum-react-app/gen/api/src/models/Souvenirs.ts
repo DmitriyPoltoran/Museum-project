@@ -37,6 +37,12 @@ export interface Souvenirs {
      * @memberof Souvenirs
      */
     name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Souvenirs
+     */
+    date?: string;
 }
 
 export function SouvenirsFromJSON(json: any): Souvenirs {
@@ -52,6 +58,7 @@ export function SouvenirsFromJSONTyped(json: any, ignoreDiscriminator: boolean):
         'img': json['img'],
         'price': !exists(json, 'price') ? undefined : json['price'],
         'name': !exists(json, 'name') ? undefined : json['name'],
+        'date': !exists(json, 'date') ? undefined : json['date'],
     };
 }
 
@@ -67,6 +74,7 @@ export function SouvenirsToJSON(value?: Souvenirs | null): any {
         'img': value.img,
         'price': value.price,
         'name': value.name,
+        'date': value.date,
     };
 }
 
