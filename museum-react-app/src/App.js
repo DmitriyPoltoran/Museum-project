@@ -3,6 +3,9 @@ import React from "react";
 import TimeTable from "./components/TimeTable.js";
 import SouvenirsTable from "./components/SouvenirsTable.js";
 import PhotoTable from "./components/PhotoTable.js";
+import photo1 from "./images/photo1.jpg";
+import photo2 from "./images/photo2.jpg";
+import photo3 from "./images/photo3.jpg";
 
 import {
   BrowserRouter as Router,
@@ -76,19 +79,19 @@ function App() {
             <div class="about">
                 <div class="about_item">
                     <div class="about_img">
-                        <a href="#"><img src="assets/images/Ukraina-lvov-muzey_apteka-flickr.com-Vaddik.jpg" width="380" height="290" alt=""/></a> 
+                        <a href="#"><img src={photo1} width="380" height="290" alt=""/></a> 
                     </div>
                     <div class="about_text">Экскурсии</div>
                 </div>
                 <div class="about_item">
                     <div class="about_img">
-                        <a href="#"><img src="assets/images/muzey-starogo-monpele.jpg" width="380" height="290" alt=""/></a> 
+                        <a href="#"><img src={photo2}  width="380" height="290" alt=""/></a> 
                      </div>
                      <div class="about_text">Сувиниры</div>
                 </div>
                 <div class="about_item">
                     <div class="about_img">
-                        <a href="#"><img src="assets/images/mapplethorpemunch_05.jpg" width="380" height="290" alt=""/></a> 
+                        <a href="#"><img src={photo3}  width="380" height="290" alt=""/></a> 
                     </div>
                     <div class="about_text">Фото</div>
                 </div>
