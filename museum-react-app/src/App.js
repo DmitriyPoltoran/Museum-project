@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import EventsTable from "./components/EventsTable.js";
+import TimeTable from "./components/TimeTable.js";
 
 import {
   BrowserRouter as Router,
@@ -11,7 +11,7 @@ import {
   useLocation,
 } from "react-router-dom";
 
-import moment from "moment";
+
 
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
             </li>
 
             <li>
-              <Link to="/weather">Weather on weak</Link>
+              <Link to="/timetable">Weather on weak</Link>
             </li>
 
            
@@ -46,10 +46,9 @@ function App() {
                 <Map />
               </Route>
 
-              <Route path="/weather">
-                <h1>Weather</h1>
-                Welcome to the weather list! Click at the button to reload the page!
-                <EventsTable />
+              <Route path="/timetable">
+                <h1>TimeTable</h1>
+                <TimeTable />
               </Route>
 
              

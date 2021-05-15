@@ -27,7 +27,7 @@ const jsf = require('json-schema-faker');
   we specify that in the exports of this module that 'hello' maps to the function named 'hello'
  */
 module.exports = {
-  events: getEvents
+  timetable: getTimetable
 };
 
 /*
@@ -36,7 +36,7 @@ module.exports = {
   Param 1: a handle to the request object
   Param 2: a handle to the response object
  */
-function getEvents(req, res) {
+function getTimetable(req, res) {
   // variables defined in the Swagger document can be referenced using req.swagger.params.{parameter_name}
   const dateRightNow = new Date();
   let fullDateText = `${dateRightNow.getFullYear()}-${dateRightNow.getMonth() + 1 >= 10
@@ -52,10 +52,9 @@ function getEvents(req, res) {
   // this sends back a JSON response which is a single string
   res.json([{
 
-    "id": "" + faker.random.number(),
-    "location": faker.address.city(),
-    "image": faker.image.image(),
+    "img": "" + faker.image.image(),
+    "price": faker.random.number({'min': 1, 'max' : 40}) + "$",
+    "name": faker.company.companyName(),
     "date": faker.date.future(),
-    // "temperature":faker.random.number() + "°",
   }]);
 }
