@@ -52,7 +52,7 @@ function getTimetable(req, res) {
   // this sends back a JSON response which is a single string
   res.json([{
 
-    "img": "" + faker.image.nature(),
+    "img": "" + faker.image.image(),
     "price": faker.random.number({'min': 1, 'max' : 40}) + "$",
     "name": faker.company.companyName(),
     "date": faker.date.future(),
