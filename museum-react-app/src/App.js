@@ -35,7 +35,10 @@ function App() {
               <Link to="/timetable">TimeTable</Link>
             </li>
 
-           
+            <li>
+              <Link to="/photo">Photo</Link>
+            </li>
+
 
           </ul>
         </nav>

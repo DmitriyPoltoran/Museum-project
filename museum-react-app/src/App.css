@@ -8,6 +8,14 @@
 }
 
 
+.items {
+  display: flex;
+  justify-content: space-between;
+}
+p {
+  text-align: center;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
