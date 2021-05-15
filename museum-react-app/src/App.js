@@ -18,6 +18,7 @@ import {
 function App() {
   return (
     <Router>
+      
       <div>
         <nav>
           <ul>
@@ -31,7 +32,7 @@ function App() {
             </li>
 
             <li>
-              <Link to="/timetable">Weather on weak</Link>
+              <Link to="/timetable">TimeTable</Link>
             </li>
 
            

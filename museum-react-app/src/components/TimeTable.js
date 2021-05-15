@@ -22,16 +22,24 @@ class TimeTable extends React.Component {
   render() {
     return <div>
       <button className="btn" onClick={this.handleReload}>Reload</button>
-      <ul>
-        <h1>Name</h1>
-        {this.state.timetable.map((event) => <li>{event.name} </li>)}
-        <h1>Data</h1>
-        {this.state.timetable.map((event) => <li>  {event.date}</li>)}
-        <h1>Price</h1>
-        {this.state.timetable.map((event) => <li> {event.price}</li>)}
-        <h1>Image</h1>
-        {this.state.timetable.map((event) => <li> <img src={event.img} alt="" /></li>)} 
-      </ul>
+      <div>
+      <h1>Image of exibition</h1>
+        <div class="items">
+        {this.state.timetable.map((event) => <p> <img src={event.img} alt="" /></p>)}
+        </div> 
+        <h1>Name of exibition</h1>
+        <div class="items">
+        {this.state.timetable.map((event) => <p>{event.name} </p>)}
+        </div>
+        <h1>Data of exibition</h1>
+        <div class="items">
+        {this.state.timetable.map((event) => <p>  {event.date}</p>)}
+        </div>
+        <h1>Price of exibition</h1>
+        <div class="items">
+        {this.state.timetable.map((event) => <p> {event.price}</p>)}
+        </div>
+    </div>
     </div>
   }
 }
